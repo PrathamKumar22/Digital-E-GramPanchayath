@@ -17,9 +17,7 @@ connectDB();
 // 2. Middleware Configuration
 
 app.use(cors({
-  origin: "https://digital-e-grampanchayath.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  origin: true
 }));
 
 /**
