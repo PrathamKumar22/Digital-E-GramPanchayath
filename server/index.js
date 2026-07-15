@@ -15,7 +15,11 @@ const app = express();
 connectDB();
 
 // 2. Middleware Configuration
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://digital-e-grampanchayath.vercel.app"
+}));
 
 /**
  * IMPORTANT: These body-parser limits MUST be defined BEFORE your routes.
