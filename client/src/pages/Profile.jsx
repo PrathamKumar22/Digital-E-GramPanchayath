@@ -43,7 +43,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       // Sends updated user data (including profilePic) to server
-      const res = await axios.put('http://localhost:5000/api/users/profile/update', user, {
+      const res = await axios.put('https://digital-e-grampanchayath-1.onrender.com/api/users/profile/update', user, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

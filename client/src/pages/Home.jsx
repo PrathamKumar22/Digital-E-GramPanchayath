@@ -15,7 +15,7 @@ const Home = () => {
     const fetchNotices = async () => {
       try {
         // Replace with your actual backend URL
-        const res = await axios.get('http://localhost:5000/api/notices');
+        const res = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/notices');
         setNotices(res.data);
       } catch (err) {
         console.error("Error fetching notices:", err);

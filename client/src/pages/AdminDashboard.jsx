@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   const fetchAdminData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/requests/all', {
+      const response = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/requests/all', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
 
   const fetchNotices = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/notices');
+      const res = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/notices');
       setAllNotices(res.data);
     } catch (err) {
       console.error("Error loading notices:", err);
@@ -72,7 +72,7 @@ const AdminDashboard = () => {
         type: "New"
       };
 
-      const response = await axios.post('http://localhost:5000/api/notices', payload);
+      const response = await axios.post('https://digital-e-grampanchayath-1.onrender.com/api/notices', payload);
       
       if (response.data) {
         alert("Broadcasted successfully to Panchayat Portal!");
@@ -89,7 +89,7 @@ const AdminDashboard = () => {
   const handleDeleteNotice = async (id) => {
     if (window.confirm("Delete this notice forever?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/notices/${id}`);
+        await axios.delete(`https://digital-e-grampanchayath-1.onrender.com/api/notices/${id}`);
         fetchNotices();
       } catch (err) {
         alert("Delete failed");

@@ -16,7 +16,7 @@ const MyRecords = () => {
   const fetchApprovedRecords = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/requests/my-requests', {
+      const response = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/requests/my-requests', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -35,7 +35,7 @@ const MyRecords = () => {
   const handleDownload = (id) => {
     // This opens the backend download route in a new tab
     const token = localStorage.getItem('token');
-    window.open(`http://localhost:5000/api/requests/download/${id}?token=${token}`, '_blank');
+    window.open(`https://digital-e-grampanchayath-1.onrender.com/api/requests/download/${id}?token=${token}`, '_blank');
   };
 
   const filteredRecords = records.filter(record =>

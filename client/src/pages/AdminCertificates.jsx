@@ -18,7 +18,7 @@ const AdminCertificates = () => {
   const fetchRequests = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/requests/all', {
+      const response = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/requests/all', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) setRequests(response.data.requests);
@@ -32,7 +32,7 @@ const AdminCertificates = () => {
   const handleViewDetails = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/requests/${id}`, {
+      const response = await axios.get(`https://digital-e-grampanchayath-1.onrender.com/api/requests/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) setSelectedRequest(response.data.request);
@@ -61,7 +61,7 @@ const AdminCertificates = () => {
       }
 
       // 3. API Call
-      const response = await axios.put(`http://localhost:5000/api/requests/${id}/status`, 
+      const response = await axios.put(`https://digital-e-grampanchayath-1.onrender.com/api/requests/${id}/status`, 
         formData,
         { headers: { 
           Authorization: `Bearer ${token}`,

@@ -16,7 +16,7 @@ const AdminNotice = () => {
 
   const fetchNotices = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/notices');
+      const res = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/notices');
       // Sorting by newest first
       const sortedNotices = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setNotices(sortedNotices);
@@ -33,7 +33,7 @@ const AdminNotice = () => {
 
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/notices', {
+      const res = await axios.post('https://digital-e-grampanchayath-1.onrender.com/api/notices', {
         title: newNoticeTitle,
         content: newNoticeContent,
         type: "New"
@@ -54,7 +54,7 @@ const AdminNotice = () => {
     if (!window.confirm("Are you sure you want to delete this notice? This action cannot be undone.")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/notices/${id}`);
+      await axios.delete(`https://digital-e-grampanchayath-1.onrender.com/api/notices/${id}`);
       setNotices(notices.filter(n => n._id !== id));
     } catch (err) {
       alert("Failed to delete notice");

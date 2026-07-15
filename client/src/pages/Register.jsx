@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('https://digital-e-grampanchayath-1.onrender.com/api/auth/register', formData);
       alert(res.data.msg); 
       navigate('/login');
     } catch (err) {

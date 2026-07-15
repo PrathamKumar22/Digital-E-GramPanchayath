@@ -19,7 +19,7 @@ const Dashboard = ({ onLogout }) => {
     const fetchRecentRequests = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/requests/my-requests', {
+        const res = await axios.get('https://digital-e-grampanchayath-1.onrender.com/api/requests/my-requests', {
           headers: { Authorization: `Bearer ${token}` }
         });
         // UPDATED: Removed .slice(0, 3) so you have enough items to scroll

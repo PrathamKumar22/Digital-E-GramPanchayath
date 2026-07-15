@@ -154,7 +154,7 @@ const ApplyCertificate = () => {
       const token = localStorage.getItem('token');
       
       // Sending payload in the format the backend expects
-      await axios.post('http://localhost:5000/api/requests/apply', {
+      await axios.post('https://digital-e-grampanchayath-1.onrender.com/api/requests/apply', {
         serviceType: config.title,
         data: formData, // All text fields including 'reason'
         attachments: Object.values(attachments) // Array of Base64 strings

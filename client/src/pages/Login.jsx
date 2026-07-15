@@ -25,7 +25,7 @@ const Login = ({ onLoginSuccess }) => {
     localStorage.clear(); 
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', credentials);
+      const res = await axios.post('https://digital-e-grampanchayath-1.onrender.com/api/auth/login', credentials);
       const loggedInUser = res.data.user;
 
       // CRITICAL DEBUG LOGS - Check these in your browser console (F12)
