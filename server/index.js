@@ -15,7 +15,6 @@ const app = express();
 connectDB();
 
 // 2. Middleware Configuration
-const cors = require("cors");
 
 app.use(cors({
   origin: "https://digital-e-grampanchayath.vercel.app"
